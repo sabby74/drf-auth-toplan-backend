@@ -29,5 +29,6 @@ urlpatterns = [
     # add all of our router urls
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('', include('users.urls')),
 ]
 
