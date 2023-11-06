@@ -16,10 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from toplan.views import ToplanViewSet
+
+# create a new router
+router = routers.DefaultRouter()
+# register our viewsets
+router.register(r'toplan', ToplanViewSet) #register "/toplan" routes
+
 
 urlpatterns = [
+    # add all of our router urls
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include('users.urls')),
-    path('', include('toplan.urls')),
 ]
+
