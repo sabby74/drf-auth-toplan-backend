@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', # REST FRAMEWORK
 
     'users', # USERS
+    'toplan', # TOPLAN
 ]
 
 MIDDLEWARE = [
